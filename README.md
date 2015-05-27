@@ -8,7 +8,7 @@
 
 State类是所有状态的基类，写成模板类方便复用。
 
-typeid是C++ RTTI的知识，使用前需要头文件<typeinfo>。
+typeid是C++ RTTI的知识，使用前需要头文件 typeinfo。
 
 hpp文件包含了类的声明和定义，写模板类的时候比较方便，适合用来编写开源库。
 
