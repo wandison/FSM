@@ -34,3 +34,8 @@ StateOne* StateOne::Instance() {
     static StateOne instance;
     return &instance;
 }
+
+bool StateOne::onMessage(Entity* entity, const Message& msg) {
+    cout << "state 1 onMessage: " << msg.msg << endl;
+    return true;
+}

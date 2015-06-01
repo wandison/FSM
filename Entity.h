@@ -18,8 +18,8 @@ public:
     ~Entity();
     
     void update() override;
-    
     FSM<Entity>* getFSM();
+    bool handleMessage(const Message& msg) override;
     
     int Bar();
     

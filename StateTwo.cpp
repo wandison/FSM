@@ -34,3 +34,8 @@ StateTwo* StateTwo::Instance() {
     static StateTwo instance;
     return &instance;
 }
+
+bool StateTwo::onMessage(Entity* entity, const Message& msg) {
+    cout << "state 2 onMessage: " << msg.msg << endl;
+    return true;
+}

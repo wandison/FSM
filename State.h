@@ -9,6 +9,8 @@
 #ifndef __ex1__State__
 #define __ex1__State__
 
+#include "Message.h"
+
 template <typename T>
 class State {
 public:
@@ -17,6 +19,8 @@ public:
     virtual void exit(T* entity) {};
     virtual void enter(T* entity) {};
     virtual void execute(T* entity) = 0;
+    
+    virtual bool onMessage(T* entity, const Message& msg) = 0;
 };
 
 #endif /* defined(__ex1__State__) */

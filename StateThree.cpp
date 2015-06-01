@@ -34,3 +34,8 @@ StateThree* StateThree::Instance() {
     static StateThree instance;
     return &instance;
 }
+
+bool StateThree::onMessage(Entity* entity, const Message& msg) {
+    cout << "state 3 onMessage: " << msg.msg << endl;
+    return true;
+}

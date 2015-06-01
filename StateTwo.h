@@ -20,6 +20,8 @@ public:
     void exit(Entity* entity) override;
     void enter(Entity* entity) override;
     void execute(Entity* entity) override;
+    
+    bool onMessage(Entity* entity, const Message& msg) override;
 };
 
 #endif /* defined(__ex1__StateTwo__) */

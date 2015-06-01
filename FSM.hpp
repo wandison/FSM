@@ -10,8 +10,9 @@
 #define __ex1__FSM__
 
 #include "State.h"
-#include <assert.h>
+#include <cassert>
 #include <typeinfo>
+#include "Message.h"
 
 template <typename T>
 class FSM {
@@ -54,6 +55,17 @@ public:
     
     bool isInState(const State<T>* state) {
         return typeid(*_currentState) == typeid(*state);
+    }
+
+    bool handleMessage(const Message& msg) {
+        if(_currentState && _currentState->onMessage(_owner, msg)) {
+            return true;
+        }
+        // 如果当前状态不能处理，交给全局状态处理
+        if(_globalState && _globalState->onMessage(_owner, msg)) {
+            return true;
+        }
+        return false;
     }
     
 private:

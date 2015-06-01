@@ -9,16 +9,18 @@
 #ifndef __ex1__EntityBase__
 #define __ex1__EntityBase__
 
+#include "Message.h"
+
 class EntityBase {
 public:
     EntityBase(int pid);
+    virtual ~EntityBase() {};
     
     void setId(int pid);
     int Id();
     
     virtual void update() = 0;
-    
-    virtual ~EntityBase() {};
+    virtual bool handleMessage(const Message& msg) = 0;
     
 private:
     int _pid;

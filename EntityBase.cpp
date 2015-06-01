@@ -7,7 +7,7 @@
 //
 
 #include "EntityBase.h"
-#include <assert.h>
+#include <cassert>
 
 int EntityBase::_nextValidId = 0;
 

@@ -30,6 +30,10 @@ FSM<Entity>* Entity::getFSM() {
     return _fsm;
 }
 
+bool Entity::handleMessage(const Message& msg) {
+    return _fsm->handleMessage(msg);
+}
+
 int Entity::Bar() {
     return bar;
 }
